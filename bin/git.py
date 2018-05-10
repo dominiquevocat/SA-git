@@ -389,7 +389,8 @@ try: #try to run a command
         print >> sys.stderr, "remote: " , remote
         #refs = repo.get_refs()
         print >> sys.stderr, "try to push " , repoPath + " to " + remote
-        porcelain.push(repoPath, remote, 'master') 
+        print >> sys.stderr, "local head: " + sys.argv[3]
+        porcelain.push(repoPath, remote, sys.argv[3]) #used to be 'master' as hard coded default
         # used to be , refs["refs/heads/master"]) but yeah branch seems to be whats asked of us...
 
     elif command == "pull":
