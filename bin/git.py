@@ -391,6 +391,8 @@ try: #try to run a command
         print >> sys.stderr, "try to push " , repoPath + " to " + remote
         print >> sys.stderr, "local head: " + sys.argv[3]
         porcelain.push(repoPath, remote, sys.argv[3]) #used to be 'master' as hard coded default
+        print "done i guess... next steps:\nrun '|git log' to show the history"
+
         # used to be , refs["refs/heads/master"]) but yeah branch seems to be whats asked of us...
 
     elif command == "pull":
